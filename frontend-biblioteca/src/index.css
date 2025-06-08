@@ -1,0 +1,144 @@
+:root {
+  font-family: system-ui, sans-serif;
+  
+}
+/* Container geral */
+.livros-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Título principal */
+.livros-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Link de novo livro */
+.novo-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+  background-color: #28a745;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.novo-link:hover {
+  background-color: #218838;
+}
+
+/* Lista de livros */
+.livros-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Item da lista */
+.livros-container li {
+  background-color: #f9f9f9;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between; /* Espaço entre info e ações */
+  align-items: center;
+}
+
+/* Info do livro (titulo e autor) */
+.livro-info {
+  flex-grow: 1;
+  color: #222;
+  font-size: 16px;
+}
+
+/* Container dos botões editar e excluir */
+.livro-acoes {
+  display: flex;
+  gap: 10px;
+}
+
+/* Link editar */
+.livro-acoes a {
+  color: #007bff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.livro-acoes a:hover {
+  text-decoration: underline;
+  background-color: #e6f0ff;
+  border-color: #007bff;
+}
+
+/* Botão excluir */
+.livro-acoes button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.livro-acoes button:hover {
+  background-color: #c82333;
+}
+
+/* Formulário de livros */
+.livros-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.livros-form h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.livros-form input,
+.livros-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  outline-offset: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.livros-form input:focus,
+.livros-form select:focus {
+  border-color: #007bff;
+}
+
+.livros-form button {
+  background-color: #28a745;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.livros-form button:hover {
+  background-color: #218838;
+}
