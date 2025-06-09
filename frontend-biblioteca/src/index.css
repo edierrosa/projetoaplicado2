@@ -58,6 +58,12 @@
   font-size: 16px;
 }
 
+/* Título do livro */
+.livro-titulo {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
 /* Container dos botões editar e excluir */
 .livro-acoes {
   display: flex;

@@ -27,8 +27,9 @@ export default function LivrosList() {
         {livros.map(livro => (
           <li key={livro.ID_livro}>
             <div className="livro-info">
-              <div>Título: {livro.titulo}</div>
+              <div className='livro-titulo'>Título: {livro.titulo}</div>
               <div>Autor: {livro.autor}</div>
+              <div>Categoria: {livro.nome_categoria}</div>
               <div>Exemplares: {livro.numero_exemplares}</div>
             </div>
             <div className="livro-acoes">

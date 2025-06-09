@@ -2,9 +2,14 @@ const db = require('../config/db');
 
 const Livros = {
   getAll: callback => {
-    db.query('SELECT * FROM LIVROS', callback);
-  },
-
+  const sql = `
+    SELECT L.*, C.nome_categoria 
+    FROM LIVROS L
+    JOIN CATEGORIA C ON L.FK_CATEGORIA_ID_categoria = C.ID_categoria
+  `;
+  db.query(sql, callback);
+},
+  
   getById: (id, callback) => {
     db.query('SELECT * FROM LIVROS WHERE ID_livro = ?', [id], callback);
   },
