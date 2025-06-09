@@ -23,23 +23,6 @@ const Livros = {
     db.query(sql, values, callback);
   },
 
-  // update: (id, data, callback) => {
-  //   const sql = `UPDATE LIVROS SET 
-  //     titulo = ?, autor = ?, edicao = ?, ano_publicacao = ?, localizacao = ?, 
-  //     data_cadastro = ?, disponibilidade = ?, numero_exemplares = ?, numero_disponiveis = ?, 
-  //     FK_CATEGORIA_ID_categoria = ?
-  //     WHERE ID_livro = ?`;
-
-  //   const values = [
-  //     data.titulo, data.autor, data.edicao, data.ano_publicacao,
-  //     data.localizacao, data.data_cadastro, data.disponibilidade,
-  //     data.numero_exemplares, data.numero_disponiveis, data.FK_CATEGORIA_ID_categoria,
-  //     id
-  //   ];
-
-  //   db.query(sql, values, callback);
-  // },
-
   update: (id, data, callback) => {
     const fields = [];
     const values = [];
@@ -67,7 +50,6 @@ const Livros = {
         fields.push(`${key} = ?`);
         values.push(value);
         
-        // values.push(data[key]);
       }
     }
 
