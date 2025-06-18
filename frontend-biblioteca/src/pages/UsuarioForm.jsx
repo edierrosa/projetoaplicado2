@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import api from '../services/api';
 
 export default function UsuarioForm() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     usuario: {
       nome_completo: '',
@@ -26,7 +28,8 @@ export default function UsuarioForm() {
     e.preventDefault();
     api.post('/usuarios', form)
       .then(() => alert('Usuário cadastrado!'))
-      .catch(() => alert('Erro ao cadastrar usuário'));
+      .catch(() => alert('Erro ao cadastrar usuário'))
+      .then(() => navigate('/usuarios'));
   };
 
   return (
