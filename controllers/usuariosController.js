@@ -15,19 +15,14 @@ exports.create = (req, res) => {
 };
 
 exports.update = (req, res) => {
-  const id = req.params.id;
-  const data = req.body;
-
-  Usuarios.update(id, data, (err) => {
+  Usuarios.update(req.params.id, req.body, (err) => {
     if (err) return res.status(500).json(err);
     res.json({ message: 'Usuário atualizado com sucesso' });
   });
 };
 
 exports.delete = (req, res) => {
-  const id = req.params.id;
-
-  Usuarios.delete(id, (err) => {
+  Usuarios.delete(req.params.id, (err) => {
     if (err) return res.status(500).json(err);
     res.json({ message: 'Usuário excluído com sucesso' });
   });

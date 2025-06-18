@@ -22,7 +22,7 @@ export default function LivrosList() {
   return (
     <div className="livros-container">
       <h1>Lista de Livros</h1>
-      <Link to="/novo" className="novo-link">+ Novo Livro</Link>
+      <Link to="/livros/novo" className="novo-link">+ Novo Livro</Link>
       <ul>
         {livros.map(livro => (
           <li key={livro.ID_livro}>
@@ -33,7 +33,7 @@ export default function LivrosList() {
               <div>Exemplares: {livro.numero_exemplares}</div>
             </div>
             <div className="livro-acoes">
-            <Link to={`/editar/${livro.ID_livro}`}>Editar</Link>
+            <Link to={`/livros/editar/${livro.ID_livro}`}>Editar</Link>
             <button onClick={() => excluirLivro(livro.ID_livro)}>Excluir</button>
           </div>
           </li>
