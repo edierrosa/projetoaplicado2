@@ -97,7 +97,6 @@ const Usuarios = {
   },
 
   update: (id, data, callback) => {
-    // Exemplo: atualiza só a tabela USUARIO (você pode expandir para os outros relacionamentos)
     const sql = `UPDATE USUARIO SET nome_completo = ?, data_nasc = ?, data_cadastro = ? WHERE ID_usuario = ?`;
     const values = [data.usuario.nome_completo, data.usuario.data_nasc, data.usuario.data_cadastro, id];
 
@@ -105,7 +104,6 @@ const Usuarios = {
   },
 
   delete: (id, callback) => {
-    // Delete cascata ou lógica conforme seu banco
     const sql = `DELETE FROM USUARIO WHERE ID_usuario = ?`;
     db.query(sql, [id], callback);
   }
