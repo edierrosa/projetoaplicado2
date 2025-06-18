@@ -5,6 +5,7 @@ import api from '../services/api';
 export default function LivrosForm() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [categorias, setCategorias] = useState([]);
   const [livro, setLivro] = useState({
     titulo: '',
     autor: '',
@@ -20,6 +21,12 @@ export default function LivrosForm() {
     }
   }, [id]);
 
+  
+
+useEffect(() => {
+  api.get('/categorias').then(res => setCategorias(res.data));
+}, []);
+
   const handleChange = e => {
     setLivro({ ...livro, [e.target.name]: e.target.value });
   };
@@ -34,6 +41,7 @@ export default function LivrosForm() {
   <div className="livros-container">
     <form onSubmit={handleSubmit} className="livros-form">
       <h1>{id ? 'Editar Livro' : 'Novo Livro'}</h1>
+      <label>Título:</label>
       <input
         name="titulo"
         value={livro.titulo}
@@ -41,6 +49,7 @@ export default function LivrosForm() {
         placeholder="Título"
         required
       />
+      <label>Autor:</label>
       <input
         name="autor"
         value={livro.autor}
@@ -48,6 +57,19 @@ export default function LivrosForm() {
         placeholder="Autor"
         required
       />
+      <label>Categoria:</label>
+      <select
+        name="FK_CATEGORIA_ID_categoria"
+        value={livro.FK_CATEGORIA_ID_categoria}
+        onChange={handleChange}
+      >
+  {categorias.map(cat => (
+    <option key={cat.ID_categoria} value={cat.ID_categoria}>
+      {cat.nome_categoria}
+    </option>
+  ))}
+</select>
+      <label>Número de exemplares:</label>
       <input
         name="numero_exemplares"
         type="number"

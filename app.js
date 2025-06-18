@@ -16,6 +16,10 @@ app.use(express.json());
 // ⬇️ Suas rotas vêm depois disso
 const livrosRoutes = require('./routes/livrosRoutes');
 app.use('/livros', livrosRoutes);
+const categoriasRoutes = require('./routes/categorias');
+app.use('/categorias', categoriasRoutes);
+const usuariosRoutes = require('./routes/usuarios');
+app.use('/usuarios', usuariosRoutes);
 
 // ⬇️ Porta do servidor
 app.listen(3000, () => {
